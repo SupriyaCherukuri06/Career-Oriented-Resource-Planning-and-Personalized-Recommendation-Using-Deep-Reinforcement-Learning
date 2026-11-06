@@ -1,512 +1,274 @@
-# AI-Enhanced Real-Time Collaborative Platform
 
-## 📌 Project Overview
+# Career-Oriented Resource Planning and Personalized Recommendation Using Deep Reinforcement Learning
 
-The **AI-Enhanced Real-Time Collaborative Platform** is a web-based platform designed to enable multiple users to collaborate on shared digital resources in real time. The platform allows users to work together on documents, spreadsheets, and source code while maintaining synchronization between all connected users.
+## Project Overview
 
-The system combines real-time collaboration technologies with Artificial Intelligence and Machine Learning to provide intelligent features such as content suggestions, activity summarization, usage analytics, and anomaly detection.
+The main aim of this project is to develop a personalized career guidance and learning resource recommendation system using Deep Reinforcement Learning.
 
-The platform is designed to provide a unified and efficient environment for collaborative work in educational institutions, corporate organizations, and software development environments.
+Many students face difficulties in choosing the right career, identifying the skills required for their desired job, and selecting suitable learning resources. Our system aims to solve these problems by analysing students' skills, career interests, available time, and budget.
 
----
+The system identifies skill gaps and recommends suitable courses, certifications, and practical projects to help students achieve their career goals.
 
-## 🎯 Problem Statement
-
-Traditional collaboration systems may create difficulties when multiple users work on the same resources simultaneously. Users may experience synchronization delays, conflicting changes, lack of awareness about other users' activities, and difficulty tracking previous versions of shared resources.
-
-There is also a need for intelligent systems that can analyze collaboration activities and provide useful insights to users.
-
-The proposed platform addresses these challenges by providing real-time synchronization, multi-user collaboration, presence awareness, version history, secure role-based access control, and AI/ML-based intelligent features.
+In the initial stage, we develop a rule-based recommendation prototype. In the future stages, we plan to integrate Deep Reinforcement Learning to improve recommendations based on student progress and feedback.
 
 ---
 
-## 💡 Proposed Solution
+## Project Objectives
 
-The proposed system provides a centralized collaborative platform where multiple users can simultaneously work on shared documents, spreadsheets, and source code.
-
-The platform uses real-time communication protocols to transmit changes between users. CRDT-based synchronization is used to maintain consistency when multiple users make changes at the same time.
-
-The platform also collects collaboration activity data and applies AI/ML techniques to provide intelligent assistance, activity summaries, usage analytics, and anomaly detection.
-
----
-
-## 🎯 Objectives
-
-The main objectives of the project are:
-
-- To develop a real-time multi-user collaborative platform.
-- To allow multiple users to work simultaneously on shared resources.
-- To provide real-time synchronization of user changes.
-- To maintain consistency during concurrent editing using CRDT-based techniques.
-- To provide presence awareness of active users.
-- To maintain version history of shared resources.
-- To provide secure role-based access control.
-- To provide AI-based content suggestions.
-- To summarize user and workspace activities.
-- To provide usage analytics.
-- To identify unusual collaboration patterns using Machine Learning.
-- To provide an efficient and user-friendly collaborative environment.
+- Analyse students' current skills and career interests.
+- Identify skill gaps between current skills and target career requirements.
+- Recommend suitable courses, certifications, and projects.
+- Consider industry demand, learning time, budget, and prerequisites.
+- Prepare personalized learning plans.
+- Develop a reward-based recommendation approach.
+- Apply Deep Reinforcement Learning for sequential recommendations in future stages.
 
 ---
 
-# ✨ Key Features
+## Proposed Technologies
 
-## 🔐 User Authentication and Access Control
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- Axios
+- Recharts
 
-The platform provides user authentication and secure access to collaborative resources. Role-based access control is used to provide different permissions to different users.
+### Backend
+- Python
+- FastAPI
+- Uvicorn
+- Pydantic
+- SQLAlchemy
 
-## 👥 Real-Time Collaboration
+### Database
+- PostgreSQL
 
-Multiple users can work on the same resource simultaneously. Changes made by one user are synchronized with other connected users in real time.
+### Machine Learning and Reinforcement Learning
+- Pandas
+- NumPy
+- Scikit-learn
+- Gymnasium
+- Stable-Baselines3
+- PyTorch
 
-## 📝 Collaborative Documents
-
-Users can create and edit shared documents collaboratively. Multiple users can work on the same document while their changes are synchronized.
-
-## 💻 Collaborative Source Code
-
-The platform provides a shared environment for source-code collaboration, allowing multiple users to work together on programming files.
-
-## 📊 Collaborative Spreadsheets
-
-Users can collaboratively work with spreadsheet data and make changes to shared spreadsheets.
-
-## 🎨 Collaborative Whiteboard
-
-The platform provides a shared digital whiteboard for visual collaboration. Users can create drawings, shapes, diagrams, and notes.
-
-## 🔄 Real-Time Synchronization
-
-The platform uses real-time communication protocols to transfer changes between connected users without requiring continuous page refreshes.
-
-## 🧩 CRDT-Based Synchronization
-
-Conflict-Free Replicated Data Types (CRDTs) are used to support reliable synchronization and consistency when multiple users edit shared resources simultaneously.
-
-## 🟢 Presence Awareness
-
-The platform provides awareness of active collaborators so users can identify who is currently working within a shared environment.
-
-## 🕒 Version History
-
-Previous versions of shared resources can be maintained so that changes can be tracked and earlier versions can be reviewed.
-
-## 🤖 AI-Based Content Suggestions
-
-AI capabilities provide useful content suggestions based on the information being created or edited by users.
-
-## 📋 Activity Summarization
-
-The platform analyzes collaboration activities and generates summaries of important actions performed by users.
-
-## 📈 Usage Analytics
-
-The system analyzes collaboration and usage information to provide useful insights about workspace activity.
-
-## 🔍 Anomaly Detection
-
-Machine Learning techniques are used to identify unusual patterns in collaboration activities.
-
-## 💬 Real-Time Communication
-
-The platform supports communication between collaborators to improve coordination while working on shared resources.
+### Development Tools
+- Visual Studio Code
+- Git
+- GitHub
 
 ---
 
-# 🏗️ System Architecture
+## System Modules
 
-The overall system architecture is represented below:
+1. **Student Profile Management:** Collect student details, qualifications, skills, interests, time availability, and budget.
 
-```text
-                    ┌─────────────────────┐
-                    │       Users         │
-                    │  Multiple Clients   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   Frontend / UI     │
-                    │ Collaborative Apps │
-                    └──────────┬──────────┘
-                               │
-                     REST API + WebSocket
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   Backend Server    │
-                    │ Authentication      │
-                    │ Collaboration       │
-                    │ AI/ML Services      │
-                    └──────────┬──────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-       ┌────────────┐   ┌────────────┐   ┌────────────┐
-       │ PostgreSQL │   │   Redis    │   │  AI / ML   │
-       │  Database  │   │   Support  │   │  Services  │
-       └────────────┘   └────────────┘   └────────────┘
-                               │
-                               ▼
-                    Real-Time Collaboration
-                               │
-                               ▼
-                         CRDT Synchronization
-## Implementation Plan
+2. **Career Selection:** Allow students to select their desired career, such as Data Scientist, Web Developer, or AI Engineer.
 
-The project will be implemented in multiple phases. Each phase focuses on developing and integrating a specific module of the AI-Enhanced Real-Time Collaborative Platform.
+3. **Skill Gap Analysis:** Compare the student's current skills with the skills required for the selected career.
 
-### Phase 1: Project Setup and Architecture
+4. **Personalized Recommendations:** Suggest relevant courses, certifications, and projects based on the identified skill gaps.
 
-- Create the GitHub repository.
-- Set up the frontend and backend directories.
-- Define the overall system architecture.
-- Configure Git and `.gitignore`.
-- Set up environment configuration.
+5. **Resource Planning:** Prepare a learning plan based on available time, budget, and prerequisites.
 
-**Expected Result:**  
-Basic project structure and development environment are ready.
+6. **Reward Function:** Evaluate recommendations using skill relevance, industry demand, learning progress, feasibility, and resource cost.
+
+7. **Deep Reinforcement Learning:** Learn improved recommendation strategies using student feedback and learning progress in future stages.
 
 ---
 
-### Phase 2: Frontend Development
+## Proposed Reward Function
 
-- Set up React.js with TypeScript and Vite.
-- Configure Tailwind CSS.
-- Create the main application layout.
-- Implement routing and navigation.
-- Create reusable UI components.
-- Configure Zustand for state management.
-- Configure Axios for API communication.
+The initial conceptual reward function is:
 
-**Expected Result:**  
-A functional frontend structure with navigation and reusable components.
+R(s,a) = w1 * R_skill + w2 * R_demand + w3 * R_progress + w4 * R_feasibility - w5 * C_resource
 
----
+Where:
 
-### Phase 3: Backend Development
+- R_skill: Relevance of the learning activity to the student's skill gap.
+- R_demand: Industry demand for the related skill.
+- R_progress: Expected or observed learning progress.
+- R_feasibility: Whether the activity fits the student's time, budget, and prerequisites.
+- C_resource: Resource cost, including time and money.
+- w1, w2, w3, w4, w5: Weights assigned to the different factors.
 
-- Set up Python and FastAPI.
-- Create backend modules and API routes.
-- Configure Pydantic models.
-- Set up SQLAlchemy.
-- Configure environment variables.
-- Create REST API endpoints.
-
-**Expected Result:**  
-A working backend capable of handling frontend requests.
+The weights and reward calculations will be refined and evaluated during implementation.
 
 ---
 
-### Phase 4: Database Implementation
+## Project Folder Structure
 
-- Configure PostgreSQL.
-- Design the database schema.
-- Create tables for users, workspaces, files, documents, activities, comments, and versions.
-- Create SQLAlchemy models.
-- Configure Alembic for database migrations.
+Career_Recommendation_Project/
 
-**Expected Result:**  
-A structured database for storing and managing platform data.
+    frontend/
+        src/
+        package.json
 
----
+    backend/
+        app/
+            main.py
+            routes/
+            models/
+            schemas/
+            services/
+            database.py
+        requirements.txt
 
-### Phase 5: Authentication and Authorization
+    recommendation_engine/
+        skill_gap.py
+        recommendation.py
+        reward_function.py
+        rl_environment.py
 
-- Implement user registration and login.
-- Implement JWT-based authentication.
-- Secure user passwords.
-- Implement role-based access control.
-- Define Admin, Editor, and Viewer roles.
-- Protect private API endpoints.
+    data/
+        careers.csv
+        resources.csv
 
-**Expected Result:**  
-Secure authentication and authorization for platform users.
-
----
-
-### Phase 6: User and Workspace Management
-
-- Create user profiles.
-- Implement workspace creation.
-- Add workspace member management.
-- Implement member invitations.
-- Configure workspace-level permissions.
-
-**Expected Result:**  
-Users can create workspaces and collaborate with other members.
+    README.md
+    .gitignore
 
 ---
 
-### Phase 7: File and Resource Management
+## Installation and Setup
 
-- Create a file explorer.
-- Support documents, source code, and spreadsheets.
-- Implement file creation, editing, renaming, and deletion.
-- Implement resource access permissions.
+### Prerequisites
 
-**Expected Result:**  
-Users can organize and manage shared project resources.
+Install the following software:
 
----
+- Python 3.10 or later
+- Node.js
+- PostgreSQL
+- Visual Studio Code
+- Git
 
-### Phase 8: Collaborative Document Editor
+### 1. Clone the Repository
 
-- Implement a rich-text document editor.
-- Allow multiple users to edit documents.
-- Track document changes.
-- Display active collaborators.
-- Prepare the editor for real-time synchronization.
+    git clone YOUR_GITHUB_REPOSITORY_URL
 
-**Expected Result:**  
-Multiple users can work on the same document simultaneously.
+    cd Career_Recommendation_Project
 
----
+### 2. Backend Setup
 
-### Phase 9: Collaborative Code Editor
+Navigate to the backend folder:
 
-- Integrate Monaco Editor.
-- Support source-code editing.
-- Implement syntax highlighting.
-- Allow multiple users to edit code simultaneously.
-- Organize code using files and folders.
+    cd backend
 
-**Expected Result:**  
-Users can collaboratively create and edit source code.
+Create a virtual environment:
 
----
+    python -m venv venv
 
-### Phase 10: Collaborative Spreadsheet
+Activate the virtual environment on Windows:
 
-- Implement spreadsheet rows and columns.
-- Support cell editing.
-- Add basic formulas and formatting.
-- Allow multiple users to edit spreadsheets.
-- Prepare spreadsheet data for AI assistance.
+    venv\Scripts\activate
 
-**Expected Result:**  
-Users can collaboratively create and manage spreadsheets.
+Install the dependencies:
 
----
+    pip install -r requirements.txt
 
-### Phase 11: Collaborative Whiteboard
+Start the FastAPI server:
 
-- Implement an interactive whiteboard.
-- Add drawing and shape tools.
-- Support text and basic objects.
-- Allow multiple users to interact with the whiteboard.
-- Synchronize whiteboard changes in real time.
+    uvicorn app.main:app --reload
 
-**Expected Result:**  
-Users can visually collaborate and share ideas.
+Backend API documentation:
 
----
+    http://127.0.0.1:8000/docs
 
-### Phase 12: WebSocket Real-Time Communication
+### 3. Frontend Setup
 
-- Implement WebSocket connections using FastAPI.
-- Create real-time communication channels.
-- Synchronize user actions between connected clients.
-- Handle connection and disconnection events.
-- Manage active collaboration sessions.
+Open another terminal:
 
-**Expected Result:**  
-Changes made by one user can be received by other connected users in real time.
+    cd frontend
+
+Install frontend dependencies:
+
+    npm install
+
+Start the React application:
+
+    npm run dev
+
+The frontend will run at the local address displayed in the terminal, usually:
+
+    http://localhost:5173
+
+### 4. Database Setup
+
+1. Install and open PostgreSQL.
+2. Create a database named `career_recommendation`.
+3. Configure the database connection in the backend environment settings.
+4. Create the required tables using the backend database models.
+
+Do not upload database passwords or secret keys to GitHub.
 
 ---
 
-### Phase 13: CRDT-Based Synchronization
+## Expected Output
 
-- Integrate Yjs/CRDT-based synchronization.
-- Represent collaborative data using shared data structures.
-- Handle simultaneous edits from multiple users.
-- Resolve editing conflicts automatically.
-- Maintain consistency between connected clients.
+The proposed system is expected to:
 
-**Expected Result:**  
-Multiple users can edit shared resources concurrently without losing changes.
-
----
-
-### Phase 14: User Presence System
-
-- Display currently active users.
-- Show user cursors and editing status where applicable.
-- Track joining and leaving events.
-- Display online/offline status.
-
-**Expected Result:**  
-Users can see who is currently collaborating.
+- Display a student profile dashboard.
+- Identify missing skills for a selected career.
+- Recommend suitable learning resources.
+- Generate a personalized learning plan.
+- Display learning progress through charts.
+- Improve recommendations using feedback and reinforcement learning in later stages.
 
 ---
 
-### Phase 15: Version History
+## Development Progress
 
-- Store important document and resource changes.
-- Create versions of shared resources.
-- Display previous versions.
-- Allow users to review changes.
-- Provide version restoration functionality.
+### Module M1: Base Paper and Problem Formulation
 
-**Expected Result:**  
-Users can track and recover previous versions of their work.
+- Study the primary base paper.
+- Analyse reference research papers.
+- Identify the problem statement and research gap.
+- Define the MDP elements: State, Action, Transition, Reward, and Discount Factor.
+- Identify baseline algorithms and evaluation metrics.
 
----
+### Implementation Plan
 
-### Phase 16: Real-Time Communication and Comments
-
-- Implement team chat.
-- Add comments and discussions.
-- Allow users to mention collaborators.
-- Store conversation history.
-- Synchronize messages in real time.
-
-**Expected Result:**  
-Team members can communicate while working on shared resources.
+- Set up frontend, backend, and database.
+- Develop the initial rule-based recommendation prototype.
+- Implement skill-gap analysis and resource planning.
+- Design the reinforcement learning environment.
+- Implement and evaluate suitable DRL algorithms.
 
 ---
 
-### Phase 17: Notification System
+## Research Papers
 
-- Implement user notifications.
-- Notify users about workspace invitations.
-- Notify users about comments and mentions.
-- Notify users about important workspace activities.
-- Display unread notification counts.
+1. Lian and He (2026), "A Reinforcement Learning-Based Framework for Personalized Career Recommendations Among College Students."  
+   https://www.fujipress.jp/jaciii/jc/jacii003000051500/
 
-**Expected Result:**  
-Users receive timely updates about relevant activities.
+2. Kokkodis and Ipeirotis (2021), "Demand-Aware Career Path Recommendations: A Reinforcement Learning Approach."  
+   https://pubsonline.informs.org/doi/10.1287/mnsc.2020.3727
 
----
-
-### Phase 18: AI Integration
-
-- Connect the backend with an AI API.
-- Keep API keys securely stored on the backend.
-- Create AI service modules.
-- Add AI request and response handling.
-- Integrate AI functionality into relevant platform modules.
-
-**Expected Result:**  
-AI-powered functionality becomes available within the platform.
+3. Chen et al. (2023), "Deep Reinforcement Learning in Recommender Systems: A Survey and New Perspectives."  
+   https://opus.lib.uts.edu.au/handle/10453/165854
 
 ---
 
-### Phase 19: AI Content Suggestions
+## Project Team
 
-- Provide AI-assisted content suggestions.
-- Generate document improvement suggestions.
-- Assist users while creating content.
-- Provide contextual recommendations.
+**Team:** CSM-A11
 
-**Expected Result:**  
-Users receive intelligent suggestions while working on shared content.
+**Project Guide:** Mrs. M. Lavanya
 
----
+**Team Members:**
 
-### Phase 20: AI Activity Summarization
-
-- Collect workspace activity information.
-- Process recent activities.
-- Generate AI-based activity summaries.
-- Display summaries on the dashboard.
-
-**Expected Result:**  
-Users can quickly understand important workspace activities.
+1. Cherukuri Supriya Sundari
+2. Dhanireddy Vinay Kumar Reddy
+3. Bodepudi Naga Soumya
+4. Galla Shanmuka Venkata Sai Santosh
 
 ---
 
-### Phase 21: Usage Analytics
+## Note
 
-- Track user and workspace activities.
-- Collect collaboration statistics.
-- Calculate resource usage information.
-- Generate charts and visual reports.
-- Display analytics on the dashboard.
-
-**Expected Result:**  
-Users and administrators can understand platform usage patterns.
+This project is being developed as an academic major project. Initial prototype features and sample datasets are for demonstration purposes. The reinforcement learning model and its performance will be evaluated during the later implementation stages.
 
 ---
 
-### Phase 22: Machine Learning Anomaly Detection
+## License
 
-- Collect relevant activity data.
-- Prepare and preprocess activity features.
-- Implement anomaly detection using Scikit-learn.
-- Use Isolation Forest for detecting unusual activity patterns.
-- Display detected anomalies to authorized users.
-
-**Expected Result:**  
-The system can identify unusual or abnormal usage patterns.
-
----
-
-### Phase 23: Dashboard Development
-
-- Create the main user dashboard.
-- Display workspaces and recent resources.
-- Display activity summaries.
-- Display analytics and notifications.
-- Provide quick access to collaboration tools.
-
-**Expected Result:**  
-Users get a centralized view of their work and collaboration activities.
-
----
-
-### Phase 24: Search Functionality
-
-- Implement global search.
-- Search users, workspaces, files, and documents.
-- Display relevant search results.
-- Add quick navigation to resources.
-
-**Expected Result:**  
-Users can quickly find resources within the platform.
-
----
-
-### Phase 25: Testing
-
-- Test frontend components.
-- Test backend API endpoints.
-- Test authentication and authorization.
-- Test database operations.
-- Test WebSocket communication.
-- Test collaborative editing.
-- Test AI features.
-- Test anomaly detection.
-- Perform integration and basic performance testing.
-
-**Expected Result:**  
-The platform functions correctly across its major modules.
-
----
-
-### Phase 26: Docker and Deployment
-
-- Create Dockerfiles for frontend and backend.
-- Configure Docker Compose.
-- Configure PostgreSQL and Redis services where required.
-- Set environment variables securely.
-- Prepare the application for deployment.
-
-**Expected Result:**  
-The complete platform can be run in a consistent deployment environment.
-
----
-
-### Phase 27: Documentation
-
-- Prepare the project README.
-- Document system architecture.
-- Document API endpoints.
-- Document database design.
-- Add setup and installation instructions.
-- Add screenshots and usage instructions.
-- Document AI/ML functionality.
-- Document testing and deployment procedures.
-
-**Expected Result:**  
-Complete technical documentation is available for developers, users, and project evaluation.
+This project is developed for academic and educational purposes.
